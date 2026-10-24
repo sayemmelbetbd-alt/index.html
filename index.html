@@ -1,590 +1,690 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080808">
-  <meta name="description" content="SAYEM affiliate manager support: registration guidance, custom promo code requests, account linking information, and affiliate support contacts.">
-  <meta name="robots" content="index,follow">
-  <title>SAYEM | Affiliate Registration & Support</title>
+  <meta name="theme-color" content="#111111">
+  <meta name="description" content="MELBET Affiliate — registration guidance, partner support, promo code requests, account linking and payment information by SAYEM.">
+  <title>MELBET Affiliate | Partner Support by SAYEM</title>
   <style>
     :root {
+      --black: #111111;
+      --black-2: #181818;
+      --black-3: #202020;
+      --gold: #f4c51b;
+      --gold-2: #ffda3d;
+      --white: #f8f8f8;
+      --muted: #bcbcbc;
+      --line: #383838;
+      --content: 1160px;
+      --radius: 12px;
       color-scheme: dark;
-      --black: #080808;
-      --black-soft: #111111;
-      --panel: #151515;
-      --panel-raised: #1b1b1b;
-      --gold: #f4c542;
-      --gold-light: #ffdc72;
-      --text: #f5f3ec;
-      --muted: #b8b5ab;
-      --line: #39352a;
-      --max-width: 1160px;
-      --radius: 16px;
-      --shadow: 0 16px 44px rgba(0, 0, 0, .28);
     }
-
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
     body {
-      margin: 0;
-      background: var(--black);
-      color: var(--text);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+      margin: 0; background: var(--black); color: var(--white);
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.65; font-size: 16px;
     }
-    a { color: var(--gold-light); text-underline-offset: 4px; }
-    a:hover { color: #fff0b8; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    button, input { font: inherit; }
-    button:focus-visible, a:focus-visible, summary:focus-visible {
-      outline: 3px solid var(--gold);
-      outline-offset: 4px;
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--gold-2); outline-offset: 3px;
     }
-    img, svg { max-width: 100%; }
-    .container { width: min(var(--max-width), calc(100% - 40px)); margin-inline: auto; }
-    .skip-link {
-      position: absolute; left: 12px; top: -60px; z-index: 1000;
-      padding: 10px 14px; background: var(--gold); color: var(--black); font-weight: 800;
+    .wrap { width: min(var(--content), calc(100% - 40px)); margin-inline: auto; }
+    .topline { height: 4px; background: var(--gold); }
+    header {
+      position: sticky; top: 0; z-index: 20; background: rgba(17,17,17,.98);
+      border-bottom: 1px solid #4a401b; box-shadow: 0 5px 18px rgba(0,0,0,.25);
     }
-    .skip-link:focus { top: 12px; }
-    .site-header {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(8, 8, 8, .97);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(12px);
-    }
-    .header-inner {
-      min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px;
-    }
-    .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--text); text-decoration: none; flex-shrink: 0; }
-    .brand-mark {
-      display: grid; place-items: center; width: 44px; height: 44px;
-      border: 2px solid var(--gold); border-radius: 12px; color: var(--gold);
-      font-size: 1.12rem; font-weight: 900; letter-spacing: -.08em;
-    }
-    .brand-name { display: block; font-size: 1.12rem; line-height: 1.1; font-weight: 900; letter-spacing: .16em; }
-    .brand-sub { display: block; margin-top: 5px; color: var(--muted); font-size: .65rem; letter-spacing: .13em; }
-    .nav-wrap { display: flex; align-items: center; gap: 24px; }
-    .main-nav { display: flex; align-items: center; gap: 20px; }
-    .main-nav a { color: var(--muted); text-decoration: none; font-size: .87rem; font-weight: 650; }
-    .main-nav a:hover, .main-nav a[aria-current="location"] { color: var(--gold); }
-    .menu-toggle {
-      display: none; width: 44px; height: 44px; padding: 8px;
-      border: 1px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--gold);
-      cursor: pointer;
-    }
-    .menu-toggle span { display: block; height: 2px; margin: 5px 2px; background: currentColor; }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { text-decoration: none; display: inline-flex; flex-direction: column; line-height: .9; flex-shrink: 0; }
+    .brand-main { font-size: 34px; font-weight: 950; letter-spacing: -1.8px; }
+    .brand-main span { color: var(--gold); }
+    .brand-sub { font-size: 10px; letter-spacing: 5px; font-weight: 800; margin: 7px 0 0 4px; color: var(--muted); }
+    .navlinks { display: flex; align-items: center; gap: 22px; }
+    .navlinks a { font-size: 13px; text-decoration: none; color: #e4e4e4; font-weight: 650; }
+    .navlinks a:hover, .navlinks a.active { color: var(--gold); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 9px;
-      min-height: 48px; padding: 12px 19px; border: 1px solid var(--gold);
-      border-radius: 10px; background: var(--gold); color: #101010;
-      font-weight: 850; text-align: center; text-decoration: none; cursor: pointer;
-      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      padding: 12px 18px; min-height: 44px; border-radius: 8px; border: 1px solid var(--gold);
+      text-decoration: none; font-size: 13px; font-weight: 850; letter-spacing: .25px;
+      transition: transform .18s ease, background .18s ease, color .18s ease;
+      cursor: pointer;
     }
-    .btn:hover { transform: translateY(-2px); background: var(--gold-light); border-color: var(--gold-light); color: #101010; }
-    .btn-secondary { background: transparent; color: var(--gold); }
-    .btn-secondary:hover { background: var(--gold); color: #101010; }
-    .btn-small { min-height: 40px; padding: 8px 13px; font-size: .84rem; }
-    .hero { padding: 92px 0 76px; border-bottom: 1px solid var(--line); }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); gap: 54px; align-items: center; }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 9px; margin: 0 0 20px;
-      color: var(--gold); font-size: .76rem; font-weight: 850; letter-spacing: .17em; text-transform: uppercase;
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--gold); color: #111; }
+    .btn-primary:hover { background: var(--gold-2); }
+    .btn-outline { color: var(--white); background: transparent; }
+    .btn-outline:hover { background: var(--gold); color: #111; }
+    .menu-btn { display: none; border: 1px solid #75621b; border-radius: 8px; color: var(--gold); background: transparent; width: 46px; height: 44px; font-size: 24px; cursor: pointer; }
+    .hero { border-bottom: 1px solid #554718; background: #141414; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 35px; align-items: center; min-height: 410px; padding-block: 56px; }
+    .eyebrow { color: var(--gold); font-weight: 850; letter-spacing: 2.5px; text-transform: uppercase; font-size: 12px; }
+    h1 { font-size: clamp(38px, 5.1vw, 64px); line-height: 1.04; letter-spacing: -1.8px; margin: 15px 0 18px; text-transform: uppercase; }
+    h1 span, .gold { color: var(--gold); }
+    .hero p { color: #d4d4d4; max-width: 590px; margin: 0 0 25px; font-size: 17px; }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-panel {
+      min-height: 290px; border: 1px solid #5d4d16; border-radius: 18px; padding: 28px;
+      background: #191919; position: relative; display: flex; flex-direction: column; justify-content: center;
+      box-shadow: inset 0 0 0 1px rgba(244,197,27,.04);
     }
-    .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--gold); }
-    h1, h2, h3 { margin: 0; line-height: 1.15; letter-spacing: -.035em; }
-    h1 { max-width: 780px; font-size: clamp(2.8rem, 6.6vw, 5.7rem); font-weight: 900; }
-    h1 span { color: var(--gold); }
-    .hero-role { margin: 22px 0 10px; color: var(--gold-light); font-size: clamp(.9rem, 1.6vw, 1.08rem); font-weight: 850; letter-spacing: .1em; }
-    .hero-tagline { margin: 0; color: var(--muted); font-size: .83rem; font-weight: 700; letter-spacing: .12em; }
-    .hero-copy { max-width: 680px; margin: 22px 0 28px; color: #d4d1c8; font-size: 1.08rem; }
-    .button-row { display: flex; flex-wrap: wrap; gap: 12px; }
-    .hero-note { display: flex; align-items: flex-start; gap: 10px; margin-top: 24px; color: var(--muted); font-size: .83rem; }
-    .hero-note strong { color: var(--gold-light); }
-    .hero-card {
-      padding: 28px; border: 1px solid var(--line); border-radius: 20px; background: var(--panel);
-      box-shadow: var(--shadow);
-    }
-    .hero-card-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
-    .hero-card-label { color: var(--muted); font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
-    .status-mark { display: inline-flex; align-items: center; gap: 7px; color: var(--gold); font-size: .74rem; font-weight: 800; }
-    .status-mark::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
-    .hero-card h2 { margin-top: 24px; font-size: 1.65rem; }
-    .hero-card p { color: var(--muted); font-size: .93rem; }
-    .quick-list { display: grid; gap: 13px; margin: 24px 0 0; padding: 0; list-style: none; }
-    .quick-list li { display: flex; gap: 11px; align-items: flex-start; color: #e6e2d8; font-size: .9rem; }
-    .check { color: var(--gold); font-weight: 900; }
-    section { padding: 78px 0; }
-    .section-head { max-width: 760px; margin-bottom: 34px; }
-    .section-kicker { margin: 0 0 12px; color: var(--gold); font-size: .76rem; font-weight: 850; letter-spacing: .16em; text-transform: uppercase; }
-    h2 { font-size: clamp(2rem, 4vw, 3.15rem); font-weight: 850; }
-    .section-intro { margin: 16px 0 0; color: var(--muted); font-size: 1.02rem; }
-    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-    .card {
-      padding: 25px; border: 1px solid var(--line); border-radius: var(--radius);
-      background: var(--panel); min-width: 0;
-    }
-    .card:hover { border-color: #77652e; }
-    .card-icon {
-      display: grid; place-items: center; width: 45px; height: 45px; margin-bottom: 19px;
-      border: 1px solid #6e5b22; border-radius: 12px; color: var(--gold); font-weight: 900; font-size: 1.12rem;
-    }
-    .card h3 { margin-bottom: 11px; font-size: 1.2rem; letter-spacing: -.02em; }
-    .card p { margin: 0; color: var(--muted); font-size: .94rem; }
-    .soft-section { background: #0e0e0e; border-block: 1px solid var(--line); }
-    .steps { counter-reset: step; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-    .step { position: relative; padding: 25px 25px 25px 76px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
-    .step::before {
-      counter-increment: step; content: counter(step, decimal-leading-zero);
-      position: absolute; top: 23px; left: 22px; color: var(--gold); font-size: 1.18rem; font-weight: 900;
-    }
-    .step h3 { margin-bottom: 10px; font-size: 1.12rem; }
-    .step p { margin: 0; color: var(--muted); font-size: .92rem; }
-    .inline-link { font-weight: 800; }
-    .notice { padding: 18px 20px; border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; background: #17150f; color: #ded9cb; }
-    .notice strong { color: var(--gold-light); }
-    .promo-box { padding: 28px; border: 1px solid #6e5b22; border-radius: 18px; background: var(--panel); }
-    .promo-code-row { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin: 18px 0; padding: 15px; border: 1px dashed #806a2c; border-radius: 12px; background: #0b0b0b; }
-    .promo-code { overflow-wrap: anywhere; color: var(--gold-light); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: clamp(.9rem, 2vw, 1.05rem); font-weight: 800; letter-spacing: .03em; }
-    .promo-steps { margin: 20px 0 0; padding-left: 22px; color: #d9d5ca; }
-    .promo-steps li { margin: 10px 0; padding-left: 4px; }
-    .payment-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-bottom: 22px; }
-    .metric { padding: 23px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
-    .metric-label { color: var(--muted); font-size: .78rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
-    .metric-value { display: block; margin: 9px 0 6px; color: var(--gold); font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 900; line-height: 1.1; }
-    .metric-note { color: var(--muted); font-size: .85rem; }
-    .info-list { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
-    .info-list li { display: flex; align-items: flex-start; gap: 12px; color: #ddd9cf; }
-    .info-list li::before { content: "•"; color: var(--gold); font-size: 1.35rem; line-height: 1.2; }
-    .faq-list { display: grid; gap: 12px; }
-    .faq-item { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); overflow: hidden; }
-    .faq-item[open] { border-color: #77652e; }
-    .faq-item summary {
-      position: relative; padding: 19px 52px 19px 20px; color: var(--text);
-      font-weight: 800; cursor: pointer; list-style: none;
-    }
-    .faq-item summary::-webkit-details-marker { display: none; }
-    .faq-item summary::after { content: "+"; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--gold); font-size: 1.5rem; font-weight: 500; }
-    .faq-item[open] summary::after { content: "−"; }
-    .faq-answer { padding: 0 20px 20px; color: var(--muted); font-size: .94rem; }
-    .faq-answer p { margin: 0; }
-    .contact-panel {
-      display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 28px;
-      padding: 34px; border: 1px solid #6e5b22; border-radius: 20px; background: var(--panel);
-    }
-    .contact-panel h2 { font-size: clamp(1.9rem, 3.8vw, 2.8rem); }
-    .contact-panel p { max-width: 650px; margin: 14px 0 0; color: var(--muted); }
-    .contact-links { display: grid; gap: 11px; min-width: 230px; }
-    .contact-links .btn { width: 100%; }
-    .legal-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-    .legal-card h3 { margin-bottom: 12px; }
-    .legal-card p, .legal-card li { color: var(--muted); font-size: .91rem; }
-    .legal-card ul { margin-bottom: 0; padding-left: 20px; }
-    .legal-card li { margin: 8px 0; }
-    .site-footer { padding: 34px 0 26px; border-top: 1px solid var(--line); background: #050505; }
-    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 30px; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 12px 20px; }
-    .footer-links a { color: var(--muted); text-decoration: none; font-size: .85rem; }
+    .hero-panel:after { content: ""; position: absolute; right: -65px; top: -85px; width: 240px; height: 240px; border: 1px solid #5b4a14; border-radius: 50%; box-shadow: 0 0 0 22px rgba(244,197,27,.025), 0 0 0 45px rgba(244,197,27,.02); pointer-events: none; }
+    .panel-label { color: var(--muted); text-transform: uppercase; font-size: 12px; letter-spacing: 2px; font-weight: 800; }
+    .panel-title { font-size: clamp(26px, 3vw, 38px); line-height: 1.15; font-weight: 900; margin: 12px 0; max-width: 380px; }
+    .panel-stat { font-size: 42px; font-weight: 950; color: var(--gold); line-height: 1.2; }
+    .panel-note { color: #c5c5c5; max-width: 330px; font-size: 14px; }
+    .section { padding: 72px 0; }
+    .section-head { max-width: 740px; margin: 0 auto 35px; text-align: center; }
+    .section-head h2 { font-size: clamp(28px, 3.5vw, 42px); line-height: 1.12; margin: 10px 0 12px; letter-spacing: -.7px; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { background: #171717; border: 1px solid var(--line); border-radius: var(--radius); padding: 25px; transition: border-color .2s ease, transform .2s ease; }
+    .card:hover { border-color: #b99a22; transform: translateY(-3px); }
+    .icon { width: 45px; height: 45px; border: 1px solid #6d5a18; border-radius: 10px; display: grid; place-items: center; color: var(--gold); font-size: 22px; font-weight: 900; margin-bottom: 16px; }
+    .card h3 { margin: 0 0 9px; font-size: 18px; line-height: 1.25; text-transform: uppercase; }
+    .card p { margin: 0; color: #c8c8c8; font-size: 14px; }
+    .stats { background: #191919; border-block: 1px solid #67561a; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); padding: 30px 0; }
+    .stat { text-align: center; padding: 8px 16px; border-right: 1px solid #454545; }
+    .stat:last-child { border-right: 0; }
+    .stat strong { display: block; color: var(--gold); font-size: clamp(27px, 3vw, 38px); font-weight: 950; line-height: 1.2; }
+    .stat span { display: block; margin-top: 7px; color: #d2d2d2; font-size: 12px; font-weight: 750; letter-spacing: .7px; text-transform: uppercase; }
+    .split { display: grid; grid-template-columns: .8fr 1.2fr; gap: 45px; align-items: start; }
+    .split h2 { font-size: clamp(28px, 3vw, 40px); line-height: 1.15; margin: 10px 0 15px; }
+    .muted { color: var(--muted); }
+    .checklist { padding: 0; margin: 22px 0 0; list-style: none; }
+    .checklist li { margin: 10px 0; padding-left: 28px; position: relative; color: #dedede; }
+    .checklist li:before { content: "✓"; color: var(--gold); position: absolute; left: 0; font-weight: 900; }
+    .steps { counter-reset: step; display: grid; gap: 14px; }
+    .step { counter-increment: step; display: grid; grid-template-columns: 48px 1fr; gap: 16px; padding: 19px; background: #171717; border: 1px solid var(--line); border-radius: 10px; }
+    .step:before { content: counter(step, decimal-leading-zero); display: grid; place-items: center; width: 44px; height: 44px; border-radius: 8px; background: var(--gold); color: #111; font-weight: 950; }
+    .step h3 { margin: 0 0 4px; font-size: 16px; }
+    .step p { margin: 0; color: #c8c8c8; font-size: 14px; }
+    .notice { border-left: 3px solid var(--gold); background: #1a1a1a; padding: 16px 18px; border-radius: 0 8px 8px 0; color: #d6d6d6; font-size: 14px; margin-top: 20px; }
+    .inline-link { color: var(--gold); font-weight: 800; text-underline-offset: 3px; }
+    .copy-box { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; background: #101010; border: 1px dashed #79651a; border-radius: 10px; padding: 14px; margin: 18px 0; }
+    .copy-box code { color: var(--gold); font-size: 15px; font-weight: 800; word-break: break-word; flex: 1; }
+    .copy-btn { border: 1px solid var(--gold); border-radius: 7px; background: var(--gold); color: #111; padding: 10px 13px; font-weight: 850; cursor: pointer; }
+    .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .info-card { background: #171717; border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
+    .info-card h3 { margin: 0 0 8px; color: var(--gold); font-size: 18px; }
+    .info-card p, .info-card li { color: #d0d0d0; font-size: 14px; }
+    .info-card p { margin: 0; }
+    .faq { max-width: 900px; margin: 0 auto; display: grid; gap: 10px; }
+    details { background: #171717; border: 1px solid var(--line); border-radius: 9px; padding: 0 18px; }
+    summary { cursor: pointer; padding: 17px 30px 17px 0; list-style: none; font-weight: 800; position: relative; }
+    summary::-webkit-details-marker { display: none; }
+    summary:after { content: "+"; position: absolute; right: 0; top: 12px; color: var(--gold); font-size: 24px; }
+    details[open] summary:after { content: "−"; }
+    details p { color: #c8c8c8; font-size: 14px; margin: 0 0 18px; }
+    .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .contact-card { display: flex; flex-direction: column; align-items: flex-start; background: #171717; border: 1px solid var(--line); border-radius: 12px; padding: 24px; }
+    .contact-card h3 { margin: 0 0 8px; }
+    .contact-card p { margin: 0 0 18px; color: var(--muted); font-size: 14px; flex: 1; }
+    .footer { border-top: 1px solid #594a19; padding: 34px 0 25px; background: #0c0c0c; }
+    .footer-top { display: flex; justify-content: space-between; gap: 28px; align-items: flex-start; }
+    .footer p { max-width: 570px; color: #aaa; font-size: 12px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 14px; }
+    .footer-links a { color: #d8d8d8; font-size: 12px; text-decoration: none; }
     .footer-links a:hover { color: var(--gold); }
-    .footer-disclaimer { max-width: 900px; margin: 22px 0 0; color: #8e8b83; font-size: .78rem; }
-    .copyright { margin: 18px 0 0; color: #77746c; font-size: .78rem; }
-    .back-top { display: inline-block; margin-top: 16px; font-size: .84rem; font-weight: 800; }
-    .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-
-    @media (max-width: 980px) {
-      .main-nav { gap: 13px; }
-      .main-nav a { font-size: .8rem; }
-      .header-cta { display: none; }
-      .hero-grid { gap: 28px; grid-template-columns: minmax(0, 1fr) minmax(260px, .75fr); }
-      .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .copyright { border-top: 1px solid #292929; padding-top: 18px; margin-top: 22px; color: #858585; font-size: 11px; }
+    .backtop { position: fixed; bottom: 18px; right: 18px; z-index: 10; width: 42px; height: 42px; display: grid; place-items: center; background: var(--gold); color: #111; border-radius: 9px; text-decoration: none; font-size: 21px; font-weight: 900; box-shadow: 0 5px 15px #0008; }
+    @media (max-width: 960px) {
+      .navlinks { gap: 13px; }
+      .navlinks a { font-size: 12px; }
+      .nav-actions .btn { padding: 10px 12px; }
+      .hero-grid { gap: 20px; }
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .split { gap: 28px; }
     }
     @media (max-width: 760px) {
-      .container { width: min(var(--max-width), calc(100% - 30px)); }
-      .header-inner { min-height: 68px; }
-      .menu-toggle { display: block; }
-      .nav-wrap { gap: 10px; }
-      .main-nav {
-        display: none; position: absolute; top: 68px; left: 0; right: 0; padding: 14px 20px 20px;
-        border-bottom: 1px solid var(--line); background: #090909; align-items: stretch; gap: 0;
-      }
-      .main-nav.is-open { display: flex; flex-direction: column; }
-      .main-nav a { padding: 13px 4px; border-bottom: 1px solid #25231d; font-size: .95rem; }
-      .main-nav a:last-child { border-bottom: 0; }
-      .hero { padding: 62px 0 52px; }
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero-card { padding: 23px; }
-      section { padding: 58px 0; }
-      .grid-2, .steps, .legal-grid { grid-template-columns: 1fr; }
-      .grid-3 { grid-template-columns: 1fr; }
-      .payment-grid { grid-template-columns: 1fr; }
-      .contact-panel { grid-template-columns: 1fr; padding: 25px; }
-      .contact-links { min-width: 0; }
+      .wrap { width: min(100% - 30px, var(--content)); }
+      .nav { min-height: 70px; gap: 12px; }
+      .brand-main { font-size: 30px; }
+      .menu-btn { display: block; flex-shrink: 0; }
+      .nav-actions { margin-left: auto; }
+      .nav-actions .btn-outline { display: none; }
+      .nav-actions .btn { min-height: 40px; padding: 9px 12px; font-size: 11px; }
+      .navlinks { display: none; position: absolute; top: 70px; left: 0; right: 0; background: #141414; border-bottom: 1px solid #514416; padding: 12px 20px 18px; flex-direction: column; align-items: stretch; gap: 0; }
+      .navlinks.open { display: flex; }
+      .navlinks a { padding: 11px 0; border-bottom: 1px solid #2b2b2b; font-size: 14px; }
+      .hero-grid { grid-template-columns: 1fr; padding-block: 42px; min-height: 0; }
+      .hero-panel { min-height: 220px; }
+      .hero p { font-size: 15px; }
+      .section { padding: 54px 0; }
+      .cards { grid-template-columns: 1fr; gap: 12px; }
+      .card { padding: 21px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); row-gap: 18px; }
+      .stat:nth-child(2) { border-right: 0; }
+      .stat:nth-child(3), .stat:nth-child(4) { border-top: 1px solid #454545; padding-top: 20px; }
+      .split { grid-template-columns: 1fr; }
+      .info-grid, .contact-grid { grid-template-columns: 1fr; }
       .footer-top { flex-direction: column; }
     }
-    @media (max-width: 420px) {
-      .brand-mark { width: 39px; height: 39px; }
-      .brand-name { font-size: 1rem; }
-      .brand-sub { font-size: .57rem; letter-spacing: .08em; }
-      .hero h1 { font-size: 2.65rem; }
-      .button-row .btn { width: 100%; }
-      .promo-code-row { align-items: stretch; flex-direction: column; }
-      .promo-code-row .btn { width: 100%; }
-      .step { padding-left: 64px; }
-      .step::before { left: 18px; }
-    }
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      *, *:before, *:after { scroll-behavior: auto !important; transition: none !important; }
     }
+  
+/* Full visual redesign inspired by the supplied MelBet reference screenshot.
+   Original copy, destinations, IDs, and JavaScript are intentionally preserved. */
+:root {
+  --black: #07090b;
+  --black-2: #0c0f12;
+  --black-3: #12161a;
+  --gold: #ffc400;
+  --gold-2: #ffda35;
+  --white: #f8f9fb;
+  --muted: #c0c5ca;
+  --line: #30363c;
+  --content: 1240px;
+  --radius: 10px;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+body {
+  margin: 0;
+  background: #07090b;
+  color: var(--white);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--gold-2); outline-offset: 3px;
+}
+.wrap { width: min(var(--content), calc(100% - 48px)); margin-inline: auto; }
+.topline { height: 4px; background: linear-gradient(90deg,#e5a900,var(--gold),#ffe36c,var(--gold)); }
+header {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(5,7,9,.97);
+  border-bottom: 1px solid #282b2e;
+  box-shadow: 0 8px 28px rgba(0,0,0,.35);
+  backdrop-filter: blur(12px);
+}
+.nav { min-height: 76px; display:flex; align-items:center; justify-content:space-between; gap:22px; }
+.brand { text-decoration:none; display:inline-flex; flex-direction:column; line-height:.9; flex-shrink:0; }
+.brand-main { font-size:32px; font-weight:1000; font-style:italic; letter-spacing:-1.8px; }
+.brand-main span { color:var(--gold); }
+.brand-sub { font-size:9px; letter-spacing:4.7px; font-weight:900; margin:8px 0 0 5px; color:#f4f4f4; }
+.navlinks { display:flex; align-items:center; gap:clamp(12px,2vw,26px); }
+.navlinks a { position:relative; font-size:12px; text-decoration:none; color:#e7e9eb; font-weight:750; white-space:nowrap; }
+.navlinks a:hover, .navlinks a.active { color:var(--gold); }
+.navlinks a:after { content:""; position:absolute; height:2px; left:0; right:100%; bottom:-9px; background:var(--gold); transition:right .18s ease; }
+.navlinks a:hover:after, .navlinks a.active:after { right:0; }
+.nav-actions { display:flex; align-items:center; gap:9px; }
+.btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:9px;
+  min-height:44px; padding:11px 17px; border-radius:6px;
+  border:1px solid var(--gold); text-decoration:none;
+  font-size:12px; font-weight:950; letter-spacing:.25px; text-transform:uppercase;
+  transition:background .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+  cursor:pointer;
+}
+.btn:hover { transform:translateY(-1px); }
+.btn-primary { background:var(--gold); color:#070707; box-shadow:0 5px 18px rgba(255,196,0,.13); }
+.btn-primary:hover { background:var(--gold-2); }
+.btn-outline { color:#fff; background:#0a0c0e; border-color:#555b60; }
+.btn-outline:hover { color:#050505; background:var(--gold); border-color:var(--gold); }
+.menu-btn { display:none; border:1px solid #42474c; border-radius:6px; color:var(--gold); background:#101316; width:43px; height:42px; font-size:23px; cursor:pointer; }
+.hero {
+  position:relative; overflow:hidden; isolation:isolate;
+  border-bottom:1px solid rgba(255,196,0,.55);
+  background:
+    linear-gradient(115deg,transparent 0 52%,rgba(255,196,0,.95) 52.1% 57%,transparent 57.1%),
+    linear-gradient(130deg,transparent 0 74%,rgba(255,196,0,.15) 74.1% 78%,transparent 78.1%),
+    radial-gradient(ellipse at 76% 42%,rgba(255,196,0,.12),transparent 30%),
+    linear-gradient(105deg,#080a0c 0%,#0c1014 65%,#17150c 100%);
+}
+.hero:before {
+  content:""; position:absolute; z-index:-1; pointer-events:none;
+  width:44%; height:150%; right:-12%; top:-25%;
+  border-left:2px solid rgba(255,196,0,.8);
+  background:linear-gradient(130deg,transparent 0 36%,rgba(0,0,0,.38) 36.2% 47%,transparent 47.2%);
+  transform:skewX(-24deg);
+}
+.hero:after {
+  content:""; position:absolute; z-index:-1; pointer-events:none;
+  width:32%; height:130%; right:3%; top:-12%;
+  border-left:1px solid rgba(255,196,0,.28);
+  background:repeating-linear-gradient(135deg,transparent 0 22px,rgba(255,255,255,.018) 23px 24px);
+  transform:skewX(-24deg);
+}
+.hero-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:36px; align-items:center; min-height:410px; padding-block:62px; }
+.eyebrow { color:var(--gold); font-weight:900; letter-spacing:1.5px; text-transform:uppercase; font-size:11px; }
+h1 {
+  font-family:Impact, Haettenschweiler, "Arial Black", sans-serif;
+  font-size:clamp(42px,5.5vw,70px); line-height:.99; letter-spacing:-.4px;
+  margin:13px 0 17px; text-transform:uppercase; font-weight:1000; color:#fff;
+  text-shadow:0 3px 0 rgba(0,0,0,.25);
+}
+h1 span { color:var(--gold); }
+.hero p { color:#e0e4e7; max-width:590px; margin:0 0 23px; font-size:16px; line-height:1.6; }
+.hero-buttons { display:flex; flex-wrap:wrap; gap:12px; }
+.hero-buttons .btn { min-height:47px; padding-inline:21px; }
+.hero-panel {
+  min-height:280px; border:1px solid #45413a; border-radius:11px; padding:30px;
+  background:linear-gradient(145deg,rgba(17,21,24,.97),rgba(5,7,9,.98));
+  position:relative; display:flex; flex-direction:column; justify-content:center;
+  box-shadow:0 22px 55px rgba(0,0,0,.28), inset 0 1px rgba(255,255,255,.04);
+  overflow:hidden;
+}
+.hero-panel:after {
+  content:""; position:absolute; right:-70px; top:-100px; width:260px; height:260px;
+  border:1px solid rgba(255,196,0,.34); border-radius:50%;
+  box-shadow:0 0 0 22px rgba(255,196,0,.035),0 0 0 48px rgba(255,196,0,.025);
+  pointer-events:none;
+}
+.panel-label { color:var(--gold); text-transform:uppercase; font-size:11px; letter-spacing:1.8px; font-weight:900; }
+.panel-title { font-family:Impact,Haettenschweiler,"Arial Black",sans-serif; font-size:clamp(27px,3vw,40px); line-height:1.08; font-weight:900; margin:12px 0; max-width:380px; text-transform:uppercase; }
+.panel-stat { font-size:39px; font-weight:1000; color:var(--gold); line-height:1.2; }
+.panel-note { color:#c8cdd1; max-width:330px; font-size:13px; }
+.section { padding:65px 0; position:relative; }
+.section-head { max-width:800px; margin:0 0 27px; text-align:left; }
+.section-head h2, .split h2 {
+  font-family:Impact,Haettenschweiler,"Arial Black",sans-serif;
+  font-size:clamp(29px,3.4vw,42px); line-height:1.08; margin:8px 0 12px;
+  letter-spacing:-.2px; text-transform:uppercase; font-weight:950;
+}
+.section-head p { color:#bfc4c8; margin:0; font-size:13px; }
+.gold { color:var(--gold); }
+.cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:13px; }
+.card {
+  background:linear-gradient(145deg,#111518,#090b0d);
+  border:1px solid #353a3f; border-radius:10px; padding:23px;
+  transition:border-color .18s ease, transform .18s ease;
+}
+.card:hover { border-color:var(--gold); transform:translateY(-2px); }
+.icon { width:43px; height:43px; border:1px solid rgba(255,196,0,.35); border-radius:8px; display:grid; place-items:center; color:var(--gold); background:rgba(255,196,0,.06); font-size:21px; font-weight:900; margin-bottom:14px; }
+.card h3 { margin:0 0 9px; font-size:15px; line-height:1.25; text-transform:uppercase; font-weight:950; }
+.card p { margin:0; color:#c5cacf; font-size:13px; line-height:1.7; }
+#benefits { background:linear-gradient(135deg,#0d1013,#080a0c) !important; border-block:1px solid #272c30; }
+#benefits:after {
+  content:""; position:absolute; right:0; top:0; bottom:0; width:20%; pointer-events:none; opacity:.45;
+  background:repeating-linear-gradient(130deg,transparent 0 32px,rgba(255,196,0,.045) 33px 34px);
+}
+.stats { background:#090b0d; border-block:1px solid #272c30; }
+.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); padding:25px 0; }
+.stat { text-align:center; padding:8px 16px; border-right:1px solid #363b40; }
+.stat:last-child { border-right:0; }
+.stat strong { display:block; color:var(--gold); font-size:clamp(26px,3vw,37px); font-weight:1000; line-height:1.2; }
+.stat span { display:block; margin-top:7px; color:#d3d7da; font-size:10px; font-weight:800; letter-spacing:.5px; text-transform:uppercase; }
+.split { display:grid; grid-template-columns:.8fr 1.2fr; gap:42px; align-items:start; }
+.split h2 { font-size:clamp(29px,3.1vw,40px); margin:9px 0 14px; }
+.muted { color:#c0c5ca; }
+.checklist { padding:0; margin:20px 0 0; list-style:none; }
+.checklist li { margin:9px 0; padding-left:27px; position:relative; color:#dfe2e5; font-size:14px; }
+.checklist li:before { content:"✓"; color:var(--gold); position:absolute; left:0; font-weight:1000; }
+.steps { counter-reset:step; display:grid; gap:12px; }
+.step { counter-increment:step; display:grid; grid-template-columns:43px minmax(0,1fr); gap:14px; padding:17px; background:linear-gradient(145deg,#111518,#090b0d); border:1px solid #343a3f; border-radius:9px; }
+.step:before { content:counter(step,decimal-leading-zero); display:grid; place-items:center; width:40px; height:40px; border-radius:50%; background:var(--gold); color:#070707; font-weight:1000; }
+.step h3 { margin:0 0 4px; font-size:14px; }
+.step p { margin:0; color:#c6cbd0; font-size:13px; line-height:1.65; }
+.notice { border-left:3px solid var(--gold); background:#14181b; padding:15px 17px; border-radius:0 7px 7px 0; color:#d7dce0; font-size:13px; margin-top:18px; }
+.inline-link { color:var(--gold); font-weight:900; text-underline-offset:3px; }
+.copy-box { display:flex; flex-wrap:wrap; align-items:center; gap:10px; background:#080a0c; border:1px dashed #6c5917; border-radius:8px; padding:12px; margin:15px 0; }
+.copy-box code { color:var(--gold); font-size:14px; font-weight:800; word-break:break-word; flex:1; }
+.copy-btn { border:1px solid var(--gold); border-radius:5px; background:var(--gold); color:#111; padding:9px 12px; font-weight:900; cursor:pointer; }
+.info-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+.info-card { background:linear-gradient(145deg,#111518,#090b0d); border:1px solid #30363b; border-radius:9px; padding:22px; }
+.info-card h3 { margin:0 0 8px; color:var(--gold); font-size:16px; font-weight:900; }
+.info-card p, .info-card li { color:#cbd0d4; font-size:13px; line-height:1.75; }
+.info-card p { margin:0; }
+#promo, #security { background:linear-gradient(125deg,#0d1013,#080a0c) !important; border-block:1px solid #272c30; }
+#registration { background:linear-gradient(135deg,#0a0c0e,#101316); }
+#payments { background:#0a0c0e; }
+#eligibility { background:linear-gradient(135deg,#0d1013,#080a0c); }
+.faq { max-width:none; margin:0 auto; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px 13px; }
+details { background:linear-gradient(145deg,#121619,#0b0d0f); border:1px solid #30363b; border-radius:7px; padding:0 15px; }
+summary { cursor:pointer; padding:14px 27px 14px 0; list-style:none; font-weight:800; font-size:13px; position:relative; }
+summary::-webkit-details-marker { display:none; }
+summary:after { content:"+"; position:absolute; right:0; top:8px; color:var(--gold); font-size:22px; }
+details[open] summary:after { content:"−"; }
+details p { color:#c6cbd0; font-size:13px; margin:0 0 15px; line-height:1.7; }
+.contact-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:13px; }
+.contact-card { display:flex; flex-direction:column; align-items:flex-start; background:#0b0d0f; border:1px solid #343a3f; border-radius:9px; padding:22px; }
+.contact-card h3 { margin:0 0 7px; font-size:16px; }
+.contact-card p { margin:0 0 16px; color:#bfc5ca; font-size:13px; flex:1; }
+.footer { border-top:1px solid #39301a; padding:30px 0 23px; background:#050607; }
+.footer-top { display:flex; justify-content:space-between; gap:26px; align-items:flex-start; }
+.footer p { max-width:570px; color:#aeb4b9; font-size:11px; line-height:1.7; }
+.footer-links { display:flex; flex-wrap:wrap; gap:12px 16px; }
+.footer-links a { color:#d9dde0; font-size:11px; text-decoration:none; }
+.footer-links a:hover { color:var(--gold); }
+.copyright { border-top:1px solid #282c30; padding-top:16px; margin-top:20px; color:#81888e; font-size:10px; }
+.backtop { position:fixed; bottom:18px; right:18px; z-index:10; width:40px; height:40px; display:grid; place-items:center; background:var(--gold); color:#111; border-radius:6px; text-decoration:none; font-size:21px; font-weight:1000; box-shadow:0 5px 15px #0008; }
+@media (max-width: 1000px) {
+  .navlinks { gap:12px; }
+  .navlinks a { font-size:11px; }
+  .nav-actions .btn { padding-inline:12px; }
+  .hero-grid { gap:22px; }
+  .cards { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 760px) {
+  .wrap { width:calc(100% - 30px); }
+  .nav { min-height:68px; gap:8px; }
+  .brand-main { font-size:27px; }
+  .brand-sub { font-size:8px; letter-spacing:4px; }
+  .menu-btn { display:block; flex-shrink:0; width:39px; height:39px; }
+  .nav-actions { margin-left:auto; gap:6px; }
+  .nav-actions .btn-outline { display:none; }
+  .nav-actions .btn { min-height:38px; padding:8px 10px; font-size:10px; }
+  .navlinks { display:none; position:absolute; top:68px; left:0; right:0; background:#080a0c; border-bottom:1px solid #514416; padding:10px 18px 16px; flex-direction:column; align-items:stretch; gap:0; }
+  .navlinks.open { display:flex; }
+  .navlinks a { padding:12px 0; border-bottom:1px solid #24282c; font-size:14px; }
+  .navlinks a:after { display:none; }
+  .hero { background:linear-gradient(130deg,transparent 0 68%,rgba(255,196,0,.8) 68.2% 72%,transparent 72.2%),radial-gradient(ellipse at 90% 25%,rgba(255,196,0,.13),transparent 35%),linear-gradient(145deg,#080a0c,#111418); }
+  .hero:before { width:38%; right:-24%; }
+  .hero:after { width:28%; right:-2%; }
+  .hero-grid { grid-template-columns:1fr; padding-block:42px; min-height:0; gap:24px; }
+  h1 { font-size:clamp(40px,10vw,58px); line-height:1; letter-spacing:-.4px; }
+  .hero p { font-size:15px; }
+  .hero-panel { min-height:210px; padding:23px; }
+  .section { padding:49px 0; }
+  .section-head { margin-bottom:24px; }
+  .cards { grid-template-columns:1fr; gap:11px; }
+  .card { padding:20px; }
+  .stats-grid { grid-template-columns:repeat(2,1fr); row-gap:15px; }
+  .stat { padding:8px 9px; }
+  .stat:nth-child(2) { border-right:0; }
+  .stat:nth-child(3), .stat:nth-child(4) { border-top:1px solid #363b40; padding-top:18px; }
+  .split { grid-template-columns:1fr; gap:23px; }
+  .info-grid, .contact-grid, .faq { grid-template-columns:1fr; }
+  .step { grid-template-columns:40px minmax(0,1fr); gap:12px; padding:15px; }
+  .step:before { width:38px; height:38px; }
+  .footer-top { flex-direction:column; }
+  .backtop { bottom:13px; right:13px; }
+}
+@media (max-width: 380px) {
+  .wrap { width:calc(100% - 24px); }
+  .brand-main { font-size:24px; }
+  .brand-sub { letter-spacing:3.2px; }
+  .nav-actions .btn { padding-inline:8px; }
+  .hero-buttons .btn { width:100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *:before, *:after { scroll-behavior:auto !important; transition:none !important; }
+}
+
   </style>
 </head>
-<body>
-  <a class="skip-link" href="#main-content">Skip to content</a>
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="SAYEM home">
-        <span class="brand-mark" aria-hidden="true">S</span>
-        <span><span class="brand-name">SAYEM</span><span class="brand-sub">AFFILIATE SUPPORT</span></span>
+<body id="top">
+  <div class="topline"></div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="MELBET Affiliate home">
+        <span class="brand-main"><span>MEL</span>BET</span>
+        <span class="brand-sub">AFFILIATE</span>
       </a>
-      <div class="nav-wrap">
-        <nav class="main-nav" id="primary-navigation" aria-label="Main navigation">
-          <a href="#about">About</a>
-          <a href="#benefits">Benefits</a>
-          <a href="#registration">Getting Started</a>
-          <a href="#payments">Payments</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <a class="btn btn-small header-cta" href="https://multi.melbetaffiliates.com/sign-up?tag=d_3998344m_18645c_" target="_blank" rel="noopener noreferrer">Register <span aria-hidden="true">↗</span></a>
-        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-controls="primary-navigation" aria-expanded="false" id="menu-toggle">
-          <span></span><span></span><span></span>
-        </button>
+      <nav class="navlinks" id="mainNav" aria-label="Main navigation">
+        <a href="#top">Home</a><a href="#about">About</a><a href="#benefits">Benefits</a>
+        <a href="#registration">How It Works</a><a href="#payments">Payments</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn btn-outline" href="https://t.me/melbetsayem" target="_blank" rel="noopener noreferrer">CONTACT</a>
+        <a class="btn btn-primary" href="https://multi.melbetaffiliates.com/sign-up?tag=d_3998344m_18645c_" target="_blank" rel="noopener noreferrer">REGISTER ↗</a>
       </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-controls="mainNav" aria-expanded="false">☰</button>
     </div>
   </header>
 
-  <main id="main-content">
+  <main>
     <section class="hero">
-      <div class="container hero-grid">
+      <div class="wrap hero-grid">
         <div>
-          <p class="eyebrow">A clear start for affiliate partners</p>
-          <h1>Build your next step with <span>SAYEM.</span></h1>
-          <p class="hero-role">OFFICIAL MELBET AFFILIATE MANAGER</p>
-          <p class="hero-tagline">AFFILIATE PARTNER • REGISTRATION • SUPPORT</p>
-          <p class="hero-copy">Practical guidance for affiliate registration, custom promo code requests, account setup, and general support—so you can understand the process before you begin.</p>
-          <div class="button-row">
-            <a class="btn" href="https://multi.melbetaffiliates.com/sign-up?tag=d_3998344m_18645c_" target="_blank" rel="noopener noreferrer">Start Registration <span aria-hidden="true">↗</span></a>
-            <a class="btn btn-secondary" href="https://t.me/melbetsayem" target="_blank" rel="noopener noreferrer">Contact SAYEM <span aria-hidden="true">↗</span></a>
+          <div class="eyebrow">Affiliate Partner • Registration • Support</div>
+          <h1>Grow your<br><span>affiliate journey</span></h1>
+          <p><strong>SAYEM</strong> — OFFICIAL MELBET AFFILIATE MANAGER. Get guidance with registration, promo code requests, account linking and partner support.</p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary" href="https://multi.melbetaffiliates.com/sign-up?tag=d_3998344m_18645c_" target="_blank" rel="noopener noreferrer">START REGISTRATION →</a>
+            <a class="btn btn-outline" href="https://t.me/melbetsayem" target="_blank" rel="noopener noreferrer">CONTACT MANAGER</a>
           </div>
-          <p class="hero-note"><span class="check" aria-hidden="true">✓</span><span><strong>Clear guidance, no earnings promises.</strong> Program rules, eligibility, and outcomes can vary. Review all applicable terms before participating.</span></p>
         </div>
-        <aside class="hero-card" aria-label="Support overview">
-          <div class="hero-card-top">
-            <span class="hero-card-label">Affiliate support desk</span>
-            <span class="status-mark">Guidance</span>
-          </div>
-          <h2>Start with the essentials.</h2>
-          <p>Use the official registration link provided here, then follow the steps for a promo code request and account setup.</p>
-          <ul class="quick-list">
-            <li><span class="check" aria-hidden="true">✓</span><span>Registration walkthrough</span></li>
-            <li><span class="check" aria-hidden="true">✓</span><span>Custom promo code request guidance</span></li>
-            <li><span class="check" aria-hidden="true">✓</span><span>General payment and account-linking information</span></li>
-            <li><span class="check" aria-hidden="true">✓</span><span>Telegram support and channel updates</span></li>
-          </ul>
+        <aside class="hero-panel" aria-label="Affiliate program highlights">
+          <div class="panel-label">MELBET Affiliate Support</div>
+          <div class="panel-title">Your next step starts with the <span class="gold">right guidance.</span></div>
+          <div class="panel-stat">24/7*</div>
+          <div class="panel-note">Contact options and support resources for affiliate registration and account-related guidance.</div>
+          <div class="muted" style="font-size:11px;margin-top:12px">*Response times and support availability may vary.</div>
         </aside>
       </div>
     </section>
 
-    <section id="about">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">About SAYEM</p>
-          <h2>Support that makes the process easier to follow.</h2>
-          <p class="section-intro">SAYEM provides affiliate onboarding guidance and a point of contact for people who want help understanding the registration and setup process. This website is an independent support and information page, not the operator's corporate website.</p>
+    <section class="section" id="about">
+      <div class="wrap split">
+        <div>
+          <div class="eyebrow">Meet your affiliate contact</div>
+          <h2>About <span class="gold">MELBET</span></h2>
+          <p class="muted">SAYEM provides independent guidance for people navigating the Melbet affiliate registration process and related partner procedures.</p>
+          <ul class="checklist">
+            <li>Registration guidance and next-step support</li>
+            <li>Custom promo code request instructions</li>
+            <li>Help understanding payment and account-linking steps</li>
+            <li>Practical account security reminders</li>
+          </ul>
         </div>
-        <div class="grid-3">
-          <article class="card"><div class="card-icon" aria-hidden="true">01</div><h3>Registration guidance</h3><p>Find the registration link and follow a straightforward checklist for submitting your application.</p></article>
-          <article class="card"><div class="card-icon" aria-hidden="true">02</div><h3>Promo code requests</h3><p>Learn what registration details and preferred code options to send to the manager for review.</p></article>
-          <article class="card"><div class="card-icon" aria-hidden="true">03</div><h3>Setup information</h3><p>Review general notes about account linking, payment status, and where to seek clarification.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="soft-section" id="benefits">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">Why start here</p>
-          <h2>Useful information before you begin.</h2>
-          <p class="section-intro">Affiliate participation takes careful setup and an understanding of the program's current conditions. These resources are intended to help you take the next step with realistic expectations.</p>
-        </div>
-        <div class="grid-2">
-          <article class="card"><div class="card-icon" aria-hidden="true">✓</div><h3>A guided starting point</h3><p>Use a single page to find registration, contact details, code-request steps, and common answers.</p></article>
-          <article class="card"><div class="card-icon" aria-hidden="true">↗</div><h3>Direct contact options</h3><p>Reach the manager or visit the support channel and bot using the Telegram links listed on this page.</p></article>
-          <article class="card"><div class="card-icon" aria-hidden="true">◎</div><h3>Understand the conditions</h3><p>Check the affiliate platform's current terms, eligibility criteria, and payment rules before relying on any information.</p></article>
-          <article class="card"><div class="card-icon" aria-hidden="true">!</div><h3>Realistic expectations</h3><p>Results are not guaranteed. Any earnings depend on applicable program rules, activity, eligibility, and other factors.</p></article>
+        <div class="info-card">
+          <h3>Clear information. Responsible support.</h3>
+          <p>This website is a partner-support resource managed by SAYEM. It is not the operator's corporate website. Program terms, approval decisions, commission arrangements and payment rules are controlled by the affiliate program and may change. Always check your affiliate account and current program guidance before acting.</p>
         </div>
       </div>
     </section>
 
-    <section id="registration">
-      <div class="container">
+    <section class="section" id="benefits" style="background:#141414;border-block:1px solid #2d2d2d">
+      <div class="wrap">
         <div class="section-head">
-          <p class="section-kicker">Registration guide</p>
-          <h2>How to get started.</h2>
-          <p class="section-intro">Follow these steps in order. Keep your own records and use only the account details you control.</p>
+          <div class="eyebrow">Why partner with the program</div>
+          <h2>Why <span class="gold">Melbet Affiliates?</span></h2>
+          <p>Key features shown in the supplied affiliate website screenshots, presented for informational purposes. Details can change and should be confirmed through current official program materials.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon" aria-hidden="true">％</div><h3>High Commission</h3><p>The supplied screenshot describes individual conditions, with up to 40% in the revenue-share model and a separate fixed CPA model. Eligibility and actual terms depend on the program and your agreement.</p></article>
+          <article class="card"><div class="icon" aria-hidden="true">◷</div><h3>Regular Payments</h3><p>The supplied screenshot states that payments are scheduled twice a month for the previous period. Actual payment dates and eligibility must be confirmed in your account.</p></article>
+          <article class="card"><div class="icon" aria-hidden="true">▣</div><h3>Creative Marketing</h3><p>Ready-made promotional materials may be available in several languages, with individual creative banners subject to availability and program rules.</p></article>
+          <article class="card"><div class="icon" aria-hidden="true">◎</div><h3>Partner Support</h3><p>Support channels listed in the supplied screenshot include Telegram, email, chat and Instagram. Available channels and response times may vary.</p></article>
+          <article class="card"><div class="icon" aria-hidden="true">↗</div><h3>Statistics & Reports</h3><p>The affiliate platform may provide access to performance statistics and reports. Review your own account for the information and reporting tools available to you.</p></article>
+          <article class="card"><div class="icon" aria-hidden="true">◎</div><h3>Global Market</h3><p>The supplied screenshot describes a program with broad geographic reach. Availability is not universal: check local laws, permitted markets and the program's current restrictions.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Statistics shown in supplied screenshot">
+      <div class="wrap stats-grid">
+        <div class="stat"><strong>100,000</strong><span>Melbet Partners in World*</span></div>
+        <div class="stat"><strong>300,000</strong><span>Players Daily*</span></div>
+        <div class="stat"><strong>62</strong><span>Languages*</span></div>
+        <div class="stat"><strong>500</strong><span>Payments*</span></div>
+      </div>
+      <div class="wrap" style="padding:0 0 17px;text-align:center;color:#888;font-size:11px">*Figures copied from the screenshots provided by the website owner; not independently verified and may be outdated.</div>
+    </section>
+
+    <section class="section" id="registration">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Start here</div>
+          <h2>Affiliate <span class="gold">Registration Guide</span></h2>
+          <p>Follow these steps to create your affiliate account and get help with the next stages.</p>
         </div>
         <div class="steps">
-          <article class="step"><h3>Open the registration page</h3><p>Use the affiliate registration link below. Check that the page address is correct before entering information.</p><p style="margin-top:14px"><a class="inline-link" href="https://multi.melbetaffiliates.com/sign-up?tag=d_3998344m_18645c_" target="_blank" rel="noopener noreferrer">Open affiliate registration ↗</a></p></article>
-          <article class="step"><h3>Complete the form</h3><p>Enter the information requested by the platform accurately. Use an email address you can access and keep it secure.</p></article>
-          <article class="step"><h3>Contact the manager</h3><p>After registering, message SAYEM through the Telegram contact link and say that you have completed the registration form.</p><p style="margin-top:14px"><a class="inline-link" href="https://t.me/melbetsayem" target="_blank" rel="noopener noreferrer">Message SAYEM ↗</a></p></article>
-          <article class="step"><h3>Request your preferred code</h3><p>Send the email address used during registration and two or three preferred promo code options. Follow the custom code procedure below.</p></article>
-          <article class="step"><h3>Wait for review and instructions</h3><p>Code options may be unavailable or declined. A code is not guaranteed; wait for confirmation and follow any additional instructions.</p></article>
-          <article class="step"><h3>Review your affiliate account</h3><p>Once access and setup are confirmed, review the platform's current rules and account dashboard. Ask support if a step is unclear.</p></article>
+          <article class="step"><div><h3>Open the registration page</h3><p>Use the registration link provided on this website. Review the terms and information shown by the affiliate platform.</p><p style="margin-top:9px"><a class="inline-link" href="https://multi.melbetaffiliates.com/sign-up?tag=d_3998344m_18645c_" target="_blank" rel="noopener noreferrer">Open affiliate registration ↗</a></p></div></article>
+          <article class="step"><div><h3>Complete the form yourself</h3><p>Enter accurate information and use an email address you can access. Keep your password private and save your login details securely.</p></div></article>
+          <article class="step"><div><h3>Check your email and account</h3><p>Follow any verification or onboarding instructions shown by the affiliate platform. Approval is subject to the program's own review and rules.</p></div></article>
+          <article class="step"><div><h3>Contact SAYEM if you need guidance</h3><p>Use the Telegram contact link to ask about the next steps. Never send passwords, OTPs or recovery codes to anyone.</p><p style="margin-top:9px"><a class="inline-link" href="https://t.me/melbetsayem" target="_blank" rel="noopener noreferrer">Contact SAYEM on Telegram ↗</a></p></div></article>
         </div>
       </div>
     </section>
 
-    <section class="soft-section" id="promo-code">
-      <div class="container grid-2">
+    <section class="section" id="promo" style="background:#141414;border-block:1px solid #2d2d2d">
+      <div class="wrap split">
         <div>
-          <p class="section-kicker">Custom promo code</p>
-          <h2>Submit your options clearly.</h2>
-          <p class="section-intro">To request a custom promo code, use the sequence below. A preferred option may be assigned only if it is available and approved.</p>
-          <ol class="promo-steps">
-            <li>Register through the affiliate registration link.</li>
-            <li>Contact the manager using the Telegram contact link.</li>
-            <li>Provide the email address used for affiliate registration.</li>
-            <li>Send two or three preferred code options, in one message if possible.</li>
-            <li>Wait for confirmation. Availability and approval are not guaranteed.</li>
-            <li>Follow the manager's instructions for any additional steps.</li>
-          </ol>
+          <div class="eyebrow">Personalized code request</div>
+          <h2>Custom Promo <span class="gold">Code</span></h2>
+          <p class="muted">If custom promo codes are available for your account, follow the request process below. A code is not guaranteed; availability and approval are determined by the program.</p>
+          <div class="notice">Security reminder: share only the registration email and preferred code options needed for the request. Never share your password, OTP, recovery code, payment credentials or sensitive account access information.</div>
         </div>
-        <div class="promo-box">
-          <h3>Example message details</h3>
-          <p style="color:var(--muted);margin:10px 0 0">Example promo code options only—these are not confirmed or reserved codes.</p>
-          <div class="promo-code-row">
-            <code class="promo-code" id="promo-examples">ABC123, MELBET001, TEAM777</code>
-            <button class="btn btn-small" type="button" id="copy-codes">Copy examples</button>
-          </div>
-          <p id="copy-status" class="visually-hidden" role="status" aria-live="polite"></p>
-          <div class="notice"><strong>Protect your account:</strong> Never send your password, one-time password (OTP), recovery codes, payment PIN, or other sensitive credentials to anyone—including a person claiming to be a manager.</div>
-          <p style="margin:18px 0 0"><a class="btn btn-secondary" href="https://t.me/melbetsayem" target="_blank" rel="noopener noreferrer">Send a request on Telegram ↗</a></p>
+        <div class="steps">
+          <article class="step"><div><h3>Register first</h3><p>Create your affiliate account using the registration link above.</p></div></article>
+          <article class="step"><div><h3>Contact the affiliate manager</h3><p>Message SAYEM through the official contact link listed on this website.</p></div></article>
+          <article class="step"><div><h3>Provide your registration email</h3><p>Send the email address used to register so the request can be identified.</p></div></article>
+          <article class="step"><div><h3>Suggest two or three code options</h3><p>Send your preferred options in one message. The examples below are only examples.</p>
+            <div class="copy-box"><code id="promoExamples">ABC123, MELBET001, TEAM777</code><button class="copy-btn" type="button" id="copyPromo">Copy examples</button></div>
+            <p id="copyStatus" aria-live="polite" style="font-size:12px"></p>
+          </div></article>
+          <article class="step"><div><h3>Wait for confirmation</h3><p>One option may be assigned if available and approved. Follow any additional instructions from the manager or program.</p></div></article>
         </div>
       </div>
     </section>
 
-    <section id="payments">
-      <div class="container">
+    <section class="section" id="payments">
+      <div class="wrap">
         <div class="section-head">
-          <p class="section-kicker">Commission and payment information</p>
-          <h2>Know what to check before requesting a withdrawal.</h2>
-          <p class="section-intro">The schedule and threshold shown here are information supplied by the website owner and have not been independently verified as current official policy.</p>
+          <div class="eyebrow">Owner-supplied guidance</div>
+          <h2>Commission Updates & <span class="gold">Payments</span></h2>
+          <p>The details below reflect information supplied by the website owner. They are not independently verified official policy.</p>
         </div>
-        <div class="payment-grid">
-          <div class="metric"><span class="metric-label">Commission update</span><strong class="metric-value">Monday</strong><span class="metric-note">Owner-supplied information</span></div>
-          <div class="metric"><span class="metric-label">Payment schedule</span><strong class="metric-value">Tuesday</strong><span class="metric-note">Owner-supplied information</span></div>
-          <div class="metric"><span class="metric-label">Minimum threshold</span><strong class="metric-value">$30</strong><span class="metric-note">Owner-supplied information</span></div>
+        <div class="info-grid">
+          <article class="info-card"><h3>Commission update</h3><p>Current owner-supplied information: commission updates are expected on <strong>Monday</strong>. Check your account for the actual update and reporting status.</p></article>
+          <article class="info-card"><h3>Payment schedule</h3><p>Current owner-supplied information: the payment schedule is <strong>Tuesday</strong>. Actual payment processing may differ according to program rules, eligibility and operational conditions.</p></article>
+          <article class="info-card"><h3>Minimum withdrawal</h3><p>Current owner-supplied threshold: <strong>$30</strong>. According to this information, when the eligible balance reaches $30, it should appear under <strong>“Available Withdraw”</strong>. Availability is not guaranteed and must be checked in your account.</p></article>
+          <article class="info-card"><h3>Player account linking</h3><p>Before payment, the required player account must be added or linked, according to the owner's current information. Follow the current instructions inside the affiliate platform and contact support if the field or process differs.</p></article>
         </div>
-        <div class="grid-2">
-          <article class="card"><h3>Available Withdraw</h3><p>According to the owner's current information, when the eligible balance reaches $30, it should appear under “Available Withdraw.” If it does not appear, check your dashboard and contact support for clarification.</p></article>
-          <article class="card"><h3>Before payment</h3><p>The required player account must be added or linked before payment, according to the owner's current information. Follow the current platform instructions and confirm that the correct account is selected.</p></article>
-        </div>
-        <div class="notice" style="margin-top:22px"><strong>Important:</strong> Actual payment processing, eligibility, withdrawal availability, account requirements, and schedules depend on the affiliate program's current rules and may change. Confirm the latest information in your account or through an appropriate official support route. No processing time or payment outcome is guaranteed.</div>
+        <div class="notice">Important: actual payment processing, eligibility, withdrawal availability, account-linking requirements and schedules depend on the affiliate program's current rules. Confirm the latest requirements in your account. No processing time or payment outcome is guaranteed here.</div>
       </div>
     </section>
 
-    <section class="soft-section" id="account-linking">
-      <div class="container">
+    <section class="section" id="security" style="background:#141414;border-block:1px solid #2d2d2d">
+      <div class="wrap split">
+        <div>
+          <div class="eyebrow">Protect your account</div>
+          <h2>Security & <span class="gold">Privacy</span></h2>
+          <p class="muted">Protect your account details while registering, requesting a promo code or discussing payment questions.</p>
+        </div>
+        <div class="info-card">
+          <ul class="checklist" style="margin-top:0">
+            <li>Never disclose passwords, OTPs, recovery codes or security answers.</li>
+            <li>Use a unique password and secure the email account linked to your affiliate profile.</li>
+            <li>Check the destination and spelling of links before signing in.</li>
+            <li>Do not send identity documents or payment details through unofficial channels unless the platform explicitly requires them through a secure official process.</li>
+            <li>Use only promotional material and practices permitted by the affiliate program and local law.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="eligibility">
+      <div class="wrap">
         <div class="section-head">
-          <p class="section-kicker">Player account linking</p>
-          <h2>Check the account details carefully.</h2>
-          <p class="section-intro">The owner-supplied payment information says the required player account must be added or linked before payment. The exact interface and requirements may depend on the platform's current process.</p>
+          <div class="eyebrow">Please read before participating</div>
+          <h2>Eligibility, Responsible Participation <span class="gold">& Legal Notice</span></h2>
         </div>
-        <div class="grid-2">
-          <article class="card"><div class="card-icon" aria-hidden="true">1</div><h3>Open your affiliate dashboard</h3><p>Sign in through the platform's usual route and locate the account or player-linking area, if available.</p></article>
-          <article class="card"><div class="card-icon" aria-hidden="true">2</div><h3>Follow the displayed instructions</h3><p>Enter only the details specifically requested by the platform. Verify identifiers before submitting any changes.</p></article>
-          <article class="card"><div class="card-icon" aria-hidden="true">3</div><h3>Confirm the link status</h3><p>Check that the account is shown as added or linked. If the option is missing, do not guess—ask support for current instructions.</p></article>
-          <article class="card"><div class="card-icon" aria-hidden="true">4</div><h3>Keep sensitive information private</h3><p>Never send passwords, OTPs, recovery codes, or full payment credentials through Telegram or an informal message.</p></article>
+        <div class="info-grid">
+          <article class="info-card"><h3>Eligibility & local rules</h3><p>You are responsible for confirming that affiliate activity and related advertising are lawful in your location. Follow age restrictions, geographic restrictions, platform rules and all applicable advertising requirements.</p></article>
+          <article class="info-card"><h3>Responsible participation</h3><p>Betting and gambling involve financial risk and may cause harm. Do not target minors or vulnerable people, do not imply that betting is a way to guarantee income, and do not encourage anyone to spend money they cannot afford to lose.</p></article>
+          <article class="info-card"><h3>No earnings guarantee</h3><p>Affiliate results depend on many factors and are not guaranteed. Statistics or program descriptions shown here do not promise a particular outcome or income.</p></article>
+          <article class="info-card"><h3>Independent support resource</h3><p>SAYEM is presented here as an affiliate manager/contact person. This website is not represented as Melbet's official corporate website, and no official certification or endorsement is claimed. Program terms may change without notice.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="faq">
-      <div class="container">
+    <section class="section" id="faq" style="background:#141414;border-block:1px solid #2d2d2d">
+      <div class="wrap">
+        <div class="section-head"><div class="eyebrow">Quick answers</div><h2>Frequently Asked <span class="gold">Questions</span></h2></div>
+        <div class="faq">
+          <details><summary>Where do I register as an affiliate?</summary><p>Use the affiliate registration link provided on this website. Complete the form on the platform and follow its verification instructions.</p></details>
+          <details><summary>How do I request a custom promo code?</summary><p>Register first, contact SAYEM through Telegram, provide the email used during registration, and suggest two or three preferred code options. Assignment depends on availability and approval.</p></details>
+          <details><summary>Is a custom promo code guaranteed?</summary><p>No. Your preferred option may be assigned only if it is available and approved. The program or manager may request additional steps.</p></details>
+          <details><summary>When are commission updates and payments?</summary><p>The owner-supplied information on this page says Monday for commission updates and Tuesday for the payment schedule. Confirm the current details and eligibility in your affiliate account.</p></details>
+          <details><summary>What is the minimum withdrawal amount?</summary><p>The owner-supplied threshold is $30. It is expected to appear under “Available Withdraw” once the eligible balance reaches that amount, but actual availability depends on current program rules.</p></details>
+          <details><summary>Do I need to link a player account?</summary><p>According to the owner's current information, the required player account must be added or linked before payment. Follow the instructions currently displayed in your affiliate account.</p></details>
+          <details><summary>Can I send my password or OTP to the manager?</summary><p>No. Never share passwords, OTPs, recovery codes or sensitive login credentials. A registration email and preferred promo code options are sufficient for the described code request.</p></details>
+          <details><summary>Are earnings guaranteed?</summary><p>No. Affiliate earnings are not guaranteed and depend on program terms, activity, eligibility and other factors. Review the official rules before participating.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
         <div class="section-head">
-          <p class="section-kicker">Frequently asked questions</p>
-          <h2>Quick answers before you contact support.</h2>
+          <div class="eyebrow">Get in touch</div>
+          <h2>Contact <span class="gold">MELBET</span></h2>
+          <p>Choose the Telegram resource that best matches your request. Always protect your account credentials.</p>
         </div>
-        <div class="faq-list">
-          <details class="faq-item"><summary>Where do I register?</summary><div class="faq-answer"><p>Use the affiliate registration link provided on this page: <a href="https://multi.melbetaffiliates.com/sign-up?tag=d_3998344m_18645c_" target="_blank" rel="noopener noreferrer">Open registration ↗</a>. Confirm the web address before entering your details.</p></div></details>
-          <details class="faq-item"><summary>How do I request a custom promo code?</summary><div class="faq-answer"><p>Register first, then contact SAYEM on Telegram with the email address used during registration and two or three preferred code options. Approval and availability are not guaranteed.</p></div></details>
-          <details class="faq-item"><summary>Are the example promo codes guaranteed to be available?</summary><div class="faq-answer"><p>No. ABC123, MELBET001, and TEAM777 are examples only. Each requested option is subject to availability and approval.</p></div></details>
-          <details class="faq-item"><summary>When is commission updated?</summary><div class="faq-answer"><p>The website owner currently provides Monday as the commission update day. This is not independently verified official policy; check the latest program rules and your dashboard.</p></div></details>
-          <details class="faq-item"><summary>When are payments scheduled?</summary><div class="faq-answer"><p>The owner-supplied information lists Tuesday as the payment schedule. Actual timing, eligibility, and processing depend on the program's current rules and are not guaranteed.</p></div></details>
-          <details class="faq-item"><summary>What is the minimum withdrawal threshold?</summary><div class="faq-answer"><p>The owner-supplied information lists $30. It also says an eligible balance at that threshold should appear under “Available Withdraw.” Confirm the current requirements in your dashboard.</p></div></details>
-          <details class="faq-item"><summary>Why might “Available Withdraw” not appear?</summary><div class="faq-answer"><p>Eligibility, account setup, balance status, or changed program rules may affect availability. Check the dashboard and ask the relevant support contact rather than assuming a withdrawal is approved.</p></div></details>
-          <details class="faq-item"><summary>Do I need to link a player account?</summary><div class="faq-answer"><p>According to the information supplied by the website owner, the required player account must be added or linked before payment. Follow the current platform instructions to confirm the correct process.</p></div></details>
-          <details class="faq-item"><summary>Can anyone guarantee my earnings or payment?</summary><div class="faq-answer"><p>No. This website does not guarantee earnings, approval, a specific payment date, or withdrawal availability. Participation and payments are subject to the program's applicable rules.</p></div></details>
-          <details class="faq-item"><summary>What information should I never share?</summary><div class="faq-answer"><p>Never share your password, OTP, recovery codes, payment PIN, or other sensitive credentials with a manager or anyone contacting you. Use secure, official account flows for authentication.</p></div></details>
-          <details class="faq-item"><summary>Where can I find updates and contact options?</summary><div class="faq-answer"><p>Use the <a href="https://t.me/melbetaffilitesupportbd" target="_blank" rel="noopener noreferrer">Telegram support channel ↗</a>, <a href="https://t.me/melbetsayem" target="_blank" rel="noopener noreferrer">SAYEM contact ↗</a>, or <a href="https://t.me/affiliatebysayem_bot" target="_blank" rel="noopener noreferrer">Telegram bot ↗</a>.</p></div></details>
-        </div>
-      </div>
-    </section>
-
-    <section class="soft-section" id="security">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">Security and privacy</p>
-          <h2>Keep your account under your control.</h2>
-          <p class="section-intro">Good security habits help protect your account, identity, and payment access.</p>
-        </div>
-        <div class="grid-3">
-          <article class="card"><div class="card-icon" aria-hidden="true">🔒</div><h3>Never disclose login secrets</h3><p>Do not share passwords, OTPs, recovery codes, PINs, or authentication links with any person in a chat.</p></article>
-          <article class="card"><div class="card-icon" aria-hidden="true">✓</div><h3>Verify before you act</h3><p>Check web addresses, usernames, and messages carefully. Be cautious of urgent requests or claims of guaranteed results.</p></article>
-          <article class="card"><div class="card-icon" aria-hidden="true">◎</div><h3>Share only what is needed</h3><p>Provide only the registration email or other non-secret details specifically needed for the request. Avoid sending unnecessary personal documents.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="eligibility">
-      <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">Eligibility and responsible participation</p>
-          <h2>Read the rules before taking part.</h2>
-        </div>
-        <div class="legal-grid">
-          <article class="card legal-card"><h3>Eligibility and local rules</h3><p>Participation is subject to the affiliate program's eligibility requirements, its current terms, and applicable laws in your location. You are responsible for checking whether participation and promotion are lawful where you live.</p><ul><li>Provide accurate registration information.</li><li>Review program policies before promoting any service.</li><li>Do not target people who are under the legal age for the relevant activity.</li></ul></article>
-          <article class="card legal-card"><h3>Responsible participation</h3><p>Where the service relates to betting or gambling, it carries financial risk and is not a reliable way to earn money. Never promise results or encourage people to risk money they cannot afford to lose. Stop and seek appropriate support if participation becomes difficult to control.</p><ul><li>No earnings or approval are guaranteed.</li><li>Do not mislead users with unsupported claims.</li><li>Respect platform rules, advertising standards, and local restrictions.</li></ul></article>
-        </div>
-        <div class="notice" style="margin-top:22px"><strong>Website disclaimer:</strong> This page provides general guidance based partly on information supplied by its owner. It is not legal, financial, or official corporate advice. Brand and platform names belong to their respective owners. This page does not claim to be the operator's official corporate website, and the owner-supplied schedule and threshold may be incomplete or outdated.</div>
-      </div>
-    </section>
-
-    <section class="soft-section" id="contact">
-      <div class="container">
-        <div class="contact-panel">
-          <div>
-            <p class="section-kicker">Contact and updates</p>
-            <h2>Choose the right Telegram destination.</h2>
-            <p>Use the direct contact for a personal query, the channel for shared updates, or the bot to access its available functions. Availability and response times may vary.</p>
-          </div>
-          <div class="contact-links">
-            <a class="btn" href="https://t.me/melbetsayem" target="_blank" rel="noopener noreferrer">Contact SAYEM ↗</a>
-            <a class="btn btn-secondary" href="https://t.me/melbetaffilitesupportbd" target="_blank" rel="noopener noreferrer">Support Channel ↗</a>
-            <a class="btn btn-secondary" href="https://t.me/affiliatebysayem_bot" target="_blank" rel="noopener noreferrer">Affiliate Bot ↗</a>
-          </div>
+        <div class="contact-grid">
+          <article class="contact-card"><div class="icon" aria-hidden="true">✉</div><h3>Affiliate Manager</h3><p>For registration guidance, promo code requests and partner questions.</p><a class="btn btn-primary" href="https://t.me/melbetsayem" target="_blank" rel="noopener noreferrer">Message SAYEM ↗</a></article>
+          <article class="contact-card"><div class="icon" aria-hidden="true">◉</div><h3>Telegram Channel</h3><p>Visit the supplied channel for affiliate support updates and information.</p><a class="btn btn-outline" href="https://t.me/melbetaffilitesupportbd" target="_blank" rel="noopener noreferrer">Open Channel ↗</a></article>
+          <article class="contact-card"><div class="icon" aria-hidden="true">⌘</div><h3>Telegram Bot</h3><p>Open the supplied bot and follow the instructions available there.</p><a class="btn btn-outline" href="https://t.me/affiliatebysayem_bot" target="_blank" rel="noopener noreferrer">Open Bot ↗</a></article>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
+  <footer class="footer">
+    <div class="wrap">
       <div class="footer-top">
-        <a class="brand" href="#top" aria-label="SAYEM home">
-          <span class="brand-mark" aria-hidden="true">S</span>
-          <span><span class="brand-name">SAYEM</span><span class="brand-sub">AFFILIATE SUPPORT</span></span>
-        </a>
+        <div>
+          <a class="brand" href="#top"><span class="brand-main"><span>MEL</span>BET</span><span class="brand-sub">AFFILIATE</span></a>
+          <p>SAYEM — OFFICIAL MELBET AFFILIATE MANAGER. Affiliate Partner • Registration • Support. This is an independent affiliate support website, not the operator's corporate website.</p>
+        </div>
         <nav class="footer-links" aria-label="Footer navigation">
-          <a href="#about">About</a><a href="#registration">Registration</a><a href="#promo-code">Promo Codes</a><a href="#payments">Payments</a><a href="#security">Security</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+          <a href="#about">About</a><a href="#benefits">Benefits</a><a href="#registration">Registration</a><a href="#promo">Promo Code</a><a href="#payments">Payments</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
         </nav>
       </div>
-      <p class="footer-disclaimer">SAYEM is an affiliate support contact and information page. This website is not represented as the operator's official corporate website. Program information, code availability, eligibility, payment schedules, and withdrawal rules may change; confirm current details through appropriate program channels. No earnings, approval, or payment outcome is guaranteed. Participate responsibly and follow applicable laws and platform terms.</p>
-      <p class="copyright">© <span id="current-year">2026</span> SAYEM Affiliate Support. All rights reserved.</p>
-      <a class="back-top" href="#top">Back to top ↑</a>
+      <div class="copyright">© <span id="year"></span> MELBET Affiliate Support. All rights reserved. Program details and payment information may change; verify current rules with the affiliate platform.</div>
     </div>
   </footer>
+  <a class="backtop" href="#top" aria-label="Back to top">↑</a>
 
   <script>
     (function () {
-      "use strict";
-
-      var menuButton = document.getElementById("menu-toggle");
-      var navigation = document.getElementById("primary-navigation");
-
-      function closeMenu() {
-        navigation.classList.remove("is-open");
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.setAttribute("aria-label", "Open navigation menu");
-      }
-
-      menuButton.addEventListener("click", function () {
-        var isOpen = menuButton.getAttribute("aria-expanded") === "true";
-        if (isOpen) {
-          closeMenu();
-        } else {
-          navigation.classList.add("is-open");
-          menuButton.setAttribute("aria-expanded", "true");
-          menuButton.setAttribute("aria-label", "Close navigation menu");
-        }
+      const menuBtn = document.getElementById('menuBtn');
+      const nav = document.getElementById('mainNav');
+      menuBtn.addEventListener('click', function () {
+        const isOpen = nav.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+        menuBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        menuBtn.textContent = isOpen ? '×' : '☰';
       });
-
-      navigation.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", closeMenu);
-      });
-
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") closeMenu();
-      });
-
-      var copyButton = document.getElementById("copy-codes");
-      var codeText = document.getElementById("promo-examples").textContent.trim();
-      var copyStatus = document.getElementById("copy-status");
-
-      function showCopyStatus(message) {
-        copyStatus.textContent = message;
-      }
-
-      function fallbackCopy(text) {
-        var field = document.createElement("textarea");
-        field.value = text;
-        field.setAttribute("readonly", "");
-        field.style.position = "fixed";
-        field.style.left = "-9999px";
-        field.style.top = "0";
-        document.body.appendChild(field);
-        field.select();
-        field.setSelectionRange(0, field.value.length);
-        var succeeded = false;
-        try { succeeded = document.execCommand("copy"); } catch (error) { succeeded = false; }
-        document.body.removeChild(field);
-        return succeeded;
-      }
-
-      copyButton.addEventListener("click", function () {
-        if (navigator.clipboard && window.isSecureContext) {
-          navigator.clipboard.writeText(codeText).then(function () {
-            showCopyStatus("Example promo codes copied to clipboard.");
-            copyButton.textContent = "Copied!";
-          }).catch(function () {
-            var ok = fallbackCopy(codeText);
-            showCopyStatus(ok ? "Example promo codes copied to clipboard." : "Copy was unavailable. Select and copy the example text manually.");
-            copyButton.textContent = ok ? "Copied!" : "Try again";
-          });
-        } else {
-          var ok = fallbackCopy(codeText);
-          showCopyStatus(ok ? "Example promo codes copied to clipboard." : "Copy was unavailable. Select and copy the example text manually.");
-          copyButton.textContent = ok ? "Copied!" : "Try again";
-        }
-      });
-
-      document.getElementById("current-year").textContent = String(new Date().getFullYear());
-
-      // Keep the FAQ easy to scan: opening one answer closes the others.
-      var faqItems = document.querySelectorAll(".faq-item");
-      faqItems.forEach(function (item) {
-        item.addEventListener("toggle", function () {
-          if (item.open) {
-            faqItems.forEach(function (other) {
-              if (other !== item) other.open = false;
-            });
-          }
+      nav.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          nav.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.setAttribute('aria-label', 'Open navigation menu');
+          menuBtn.textContent = '☰';
         });
       });
-    }());
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const copyBtn = document.getElementById('copyPromo');
+      const promoText = document.getElementById('promoExamples');
+      const copyStatus = document.getElementById('copyStatus');
+      copyBtn.addEventListener('click', async function () {
+        const text = promoText.textContent.trim();
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+          } else {
+            const area = document.createElement('textarea');
+            area.value = text;
+            area.setAttribute('readonly', '');
+            area.style.position = 'fixed';
+            area.style.left = '-9999px';
+            document.body.appendChild(area);
+            area.select();
+            const copied = document.execCommand('copy');
+            document.body.removeChild(area);
+            if (!copied) throw new Error('Copy command failed');
+          }
+          copyStatus.textContent = 'Examples copied to clipboard.';
+        } catch (error) {
+          copyStatus.textContent = 'Copy is unavailable in this browser. Select and copy the examples manually.';
+        }
+      });
+    })();
   </script>
 </body>
 </html>
